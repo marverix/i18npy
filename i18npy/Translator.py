@@ -1,5 +1,5 @@
 from typing import overload, Union
-from .helpers import apply_numbers, apply_formatting, does_index_exist
+from .helpers import get_arg, get_arg_type, apply_numbers, apply_formatting
 
 
 class Translator:
@@ -105,31 +105,24 @@ class Translator:
         context = self.global_context
 
         if len(args):
-            type0 = type(args[0])
+            type0 = get_arg_type(args, 0)
             if type0 is str:
                 default_text = args[0]
-                if does_index_exist(args, 1):
-                    type1 = type(args[1])
-                    if type1 is int:
-                        num = args[1]
-                        if does_index_exist(args, 2):
-                            formatting = args[2]
-                            if does_index_exist(args, 3):
-                                context = args[3] or context
-                    elif type1 is dict:
-                        formatting = args[1]
-                        if does_index_exist(args, 2):
-                            context = args[2] or context
+                type1 = get_arg_type(args, 1)
+                if type1 is int:
+                    num = args[1]
+                    formatting = get_arg(args, 2)
+                    context = get_arg(args, 3, context)
+                elif type1 is dict:
+                    formatting = args[1]
+                    context = get_arg(args, 2, context)
             elif type0 is int:
                 num = args[0]
-                if does_index_exist(args, 1):
-                    formatting = args[1]
-                    if does_index_exist(args, 2):
-                        context = args[2] or context
+                formatting = get_arg(args, 1)
+                context = get_arg(args, 2, context)
             elif type0 is dict:
                 formatting = args[0]
-                if does_index_exist(args, 1):
-                    context = args[1] or context
+                context = get_arg(args, 1, context)
 
         if isinstance(text, dict):
             if "i18n" in text and isinstance(text['i18n'], dict):

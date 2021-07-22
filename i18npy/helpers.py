@@ -1,4 +1,18 @@
-from typing import Union, List, Tuple
+from typing import Union, Tuple
+
+
+def get_arg(args: Tuple, index: int, default_value=None):
+    try:
+        return args[index]
+    except Exception:
+        return default_value
+
+
+def get_arg_type(args: Tuple, index: int):
+    try:
+        return type(args[index])
+    except Exception:
+        return None
 
 
 def apply_numbers(text: str, num: int) -> str:
@@ -12,7 +26,3 @@ def apply_formatting(text: str, num: Union[int, None], formatting: Union[dict, N
         for k, v in formatting.items():
             text = text.replace("%{" + k + "}", v)
     return text
-
-
-def does_index_exist(arr: Union[List, Tuple], index: int) -> bool:
-    return len(arr) > index
