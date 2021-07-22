@@ -4,6 +4,7 @@
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/i18npy)](https://github.com/marverix/i18npy/actions/workflows/tests.yml)
 [![Codecov](https://img.shields.io/codecov/c/gh/marverix/i18npy?token=NPX0JP4458)](https://app.codecov.io/gh/marverix/i18npy)
 [![GitHub](https://img.shields.io/github/license/marverix/i18npy)](https://tldrlegal.com/license/mit-license)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fmarverix%2Fi18npy.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fmarverix%2Fi18npy?ref=badge_shield)
 
 This is Python implementation of [roddeh/i18njs](https://github.com/roddeh/i18njs) (http://i18njs.com/).
 It's fully compatible with it's  JSON dictionaries syntax.
@@ -98,3 +99,5 @@ The library code is based on his code, which is also licensed by MIT.
 ## License
 
 This project is licensed under MIT License - see the [LICENSE](LICENSE) file for details.
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fmarverix%2Fi18npy.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fmarverix%2Fi18npy?ref=badge_large)
