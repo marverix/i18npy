@@ -93,7 +93,7 @@ lang_pl.translate("I have %n cookies", 3)
 ## Word of appreciation 
 
 The original i18njs library ha been written by [roddeh](https://github.com/roddeh/).
-The library code is based on hid code, which is also licensed by MIT.
+The library code is based on his code, which is also licensed by MIT.
 
 ## License
 
